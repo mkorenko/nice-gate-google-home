@@ -1,0 +1,3 @@
+[submodule "src/esp-firebase-gh"]
+	path = src/esp-firebase-gh
+	url = https://github.com/mkorenko/esp-firebase-gh.git
