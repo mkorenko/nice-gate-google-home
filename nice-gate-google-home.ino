@@ -7,6 +7,8 @@
 
 #include "credentials.h"
 
+unsigned long _last_activity_at = 0;
+
 #define SCA_PIN 1
 #define CLOSE_PIN 2
 #define OPEN_PIN 3
@@ -33,6 +35,8 @@ inline void set_state(uint8_t state) {
   if (_prev_state == state) {
     return;
   }
+
+  _last_activity_at = millis();
 
   if (state == 1 && !_prev_opening) {
     _prev_opening = true;
